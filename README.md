@@ -1,4 +1,4 @@
-Projet d'ASSE à l'UPJV, Master Informatique.
+Projet d'ASSE à l'UPJV, Master Informatique.<br />
 *Le DC est constitué d'un mini ordinateur (Shuttle) et de trois Raspberry PI.*
 
 **Pré-requis sur le Shuttle :** accès physique avec écran et clavier, Python installé.
