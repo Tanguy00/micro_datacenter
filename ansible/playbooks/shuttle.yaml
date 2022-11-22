@@ -1,0 +1,11 @@
+---
+
+- name: Déploiement du Shuttle
+  hosts: localhost
+  become: yes
+  gather_facts: no
+
+  roles:
+  - common
+  - shuttle-packages
+  - dhcp
