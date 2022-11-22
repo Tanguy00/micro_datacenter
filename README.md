@@ -10,10 +10,9 @@ python -m venv .pyenv
 source .pyenv/bin/activate  # On entre dans l'env
 
 python3 -m pip install ansible==6.6
+ansible --version
 
 deactivate               # On sort de l'env
-
-ansible --version
 ```
 <br />
 
