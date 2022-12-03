@@ -1,4 +1,6 @@
 ---
+# L'hôte localhost est dans le groupe all
+# Les hôtes du groupe raspberry sont dans le groupe all
 
 all:
   hosts:

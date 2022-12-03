@@ -1,6 +1,6 @@
 ---
 
-- name: Install DHCP package
+- name: Install DHCP server package
   ansible.builtin.apt:
     update_cache: yes
     cache_valid_time: 86400
@@ -8,18 +8,23 @@
     pkg:
     - isc-dhcp-server
 
-#- name: Import /etc/ssh/sshd_config.d/ file
-#  ansible.builtin.copy:
-#    src: main.conf
-#    dest: /etc/ssh/sshd_config.d/main.conf
-#    owner: root
-#    group: root
-#    mode: "0644"
-#  notify:
-#  - Restart dhcp
-#
-#- name: "Add authorized keys"
-#  ansible.posix.authorized_key:
-#    user: 'rpi'
-#    key: "{{ item.value }}"
-#  loop: "{{ ssh_users | dict2items }}"
+- name: Import dhcpd configuration file
+  ansible.builtin.template:
+    src: isc-dhcp-server.j2
+    dest: /etc/default/isc-dhcp-server
+    owner: root
+    group: root
+    mode: "0644"
+  notify:
+  - Restart dhcp
+
+- name: Import dhcpd file for pools configuration
+  ansible.builtin.copy:
+    src: dhcpd.conf
+    dest: /etc/dhcp/dhcpd.conf
+    owner: root
+    group: root
+    mode: "0644"
+  notify:
+  - Restart dhcp
+
