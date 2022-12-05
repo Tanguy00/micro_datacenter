@@ -1,0 +1,13 @@
+---
+
+- name: Déploiement des Raspbeerry Pi
+  hosts: raspberry
+  remote_user: "{{ username }}"
+  become: yes
+  gather_facts: no
+
+  roles:
+  - common
+  - rsyslog
+  - openssh
+

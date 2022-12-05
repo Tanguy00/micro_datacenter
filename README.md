@@ -17,4 +17,13 @@ deactivate               # On sort de l'env
 <br />
 
 ## Déploiement Ansible
+```bash
+# Sur localhost
+ansible-playbook -i inventory.yaml playbooks/shuttle.yaml --ask-become-pass
 
+# Ailleurs (password)
+ansible-playbook -i inventory.yaml playbooks/raspberry.yaml -k
+# Ailleurs (public key)
+# Il faut avoir créé la pubkey et mis sa pubkey dans la variable
+ansible-playbook -i inventory.yaml playbooks/raspberry.yaml
+```

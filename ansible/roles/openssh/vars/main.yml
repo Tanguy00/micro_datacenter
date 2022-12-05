@@ -1,4 +1,4 @@
 ---
 
 ssh_users:
-  tanguy: 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINMtL/DHT/WJVbfV0kqZpnBGGEAaxkz+r6MeHjAvYixv tn@manja'
+  tanguy: 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGR92P5rLuZDXDHv72vBCvgS+1zCxEfCyYFRsVWogof5 tanguy@the-shuttle'

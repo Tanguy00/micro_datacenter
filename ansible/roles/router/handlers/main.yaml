@@ -1,0 +1,6 @@
+---
+
+- name: Save iptables
+  community.general.iptables_state:
+    state: saved
+    path: /etc/sysconfig/iptables

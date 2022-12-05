@@ -9,3 +9,5 @@
   - common
   - shuttle-packages
   - dhcp
+  - router
+  - rsyslog

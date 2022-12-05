@@ -1,0 +1,18 @@
+---
+
+- ansible.posix.sysctl:
+    name: net.ipv4.ip_forward
+    value: '1'
+    sysctl_set: yes
+    state: present
+    reload: yes
+
+- name: Routing rule
+  ansible.builtin.iptables:
+    table: nat
+    chain: POSTROUTING
+    jump: MASQUERADE
+    source: "10.0.2.0/24"
+    comment: Route packet from LAN to WAN
+  notify: 
+  - Save iptables
